@@ -1,47 +1,27 @@
-(function ( $ ) {
- 
-	$.fn.linkIt = function( action, options ) {
+if (typeof jQuery == 'undefined'){
+    console.log('Link it requires jQuery to run');
+}else{
+    (function ($) {
+    "use strict";
+    $.fn.linkIt = function (options) {
+        let settings = $.extend({
+            linkColor: "#ff0000",
+            linkClass: 'linkit-link',
+            linkWord: ['', '#', ''],
+            caseSensitive: false
+        }, options);
 
-		// options
-		var settings = $.extend({
-            // These are the defaults.
-            color: "#ff0000"
-        }, options );
+        let $str = $(this);
 
-		if ( action === "url") {
-		var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-		var regex = new RegExp(expression);
-		var text = this.html();
-
-			if (text.match(regex) )
-			{
-				text = text.replace(regex, "<a href='$&' style='color:" + settings.color + "'>$&</a>");
-				this.html(text);
-			}else {
-				alert("No match");
-			}
-
-
-		}
-
-		if ( action === "text") {
-		var text = settings.text;
-		var link = settings.link;
-		console.log(text);
-		var regex = new RegExp(text);
-		var text = this.html();
-
-			if (text.match(regex) )
-			{
-				text = text.replace(regex, "<a href='" + settings.link + "' style='color:" + settings.color + "'>$&</a>");
-				this.html(text);
-			}else {
-				alert("No match");
-			}
-
-
-		}
-
-	};
- 
-}( jQuery ));
+        $str.each(function (index, element) {
+            let strText = this.innerText,
+                query = "\\b" + settings.linkWord[0] + "\\b",
+                flags = settings.caseSensitive = true ? 'g' : 'gi',
+                regex = new RegExp(query, flags),
+                result = strText.replace(regex, "<a href=" + settings.linkWord[1]+ " style='color:" + settings.linkColor + "' class='" + settings.linkClass + "'>" + settings.linkWord[0] + "</a>");
+                console.log(result);
+            return this.innerHTML = result;  
+        });
+    };
+}(jQuery));
+}

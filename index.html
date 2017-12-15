@@ -1,40 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Link It</title>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <title>Link It</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
+
 <body>
-	<h1>Link It Examples</h1>
-	<section>
-		<h2>Replace all URLs</h2>
-		<p class="url-test">
-			http://dan-est.com 123 jhgjhg 4 dan regex www.dn.com and there is another one facebook.com
-		</p>
-	</section>
-	
-	<section>
-		<h2>Replace specific words</h2>
-		<p class="text-test">
-		http://dan-est.com 123 jhgjhg 4 dan regex www.dn.com and there is another one facebook twitter
-	</p>
-	</section>
+<!-- Examples -->
+<div class="container">
+    <h1>Link It Examples</h1>
+    <section class="text">
+        <h2>Example: Replace 'jQuery'</h2>
+        <p>
+            jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML.[3] jQuery
+            is the most popular JavaScript library in use today, with installation on 65% of the top 10 million
+            highest-trafficked sites on the Web.[4][5][6]
+            jQuery is free, open-source software licensed under the MIT License.[2]</p>
+        <p>
+            jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations,
+            handle events, and develop Ajax applications. jQuery also provides capabilities for developers to create
+            plug-ins on top of the JavaScript library.
+            This enables developers to create abstractions for low-level interaction and animation, advanced effects and
+            high-level, themeable widgets. The modular approach to the jQuery library allows the creation of powerful
+            dynamic web pages and Web applications.
+        </p>
+    </section>
 
+    <section class="text-2">
+        <h2>Example: Replace 'HTML'</h2>
+        <p>
+            jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML.[3] jQuery
+            is the most popular JavaScript library in use today, with installation on 65% of the top 10 million
+            highest-trafficked sites on the Web.[4][5][6]
+            jQuery is free, open-source software licensed under the MIT License.[2]</p>
+        <p>
+            jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations,
+            handle events, and develop Ajax applications. jQuery also provides capabilities for developers to create
+            plug-ins on top of the JavaScript library.
+            This enables developers to create abstractions for low-level interaction and animation, advanced effects and
+            high-level, themeable widgets. The modular approach to the jQuery library allows the creation of powerful
+            dynamic web pages and Web applications.
+        </p>
+    </section> 
 
-<!-- Link it script -->
+    <section class="text-3">
+        <h2>Example: Replace 'design'</h2>
+        <p>
+            jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML.[3] jQuery
+            is the most popular JavaScript library in use today, with installation on 65% of the top 10 million
+            highest-trafficked sites on the Web.[4][5][6]
+            jQuery is free, open-source software licensed under the MIT License.[2]</p>
+        <p>
+            jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations,
+            handle events, and develop Ajax applications. jQuery also provides capabilities for developers to create
+            plug-ins on top of the JavaScript library.
+            This enables developers to create abstractions for low-level interaction and animation, advanced effects and
+            high-level, themeable widgets. The modular approach to the jQuery library allows the creation of powerful
+            dynamic web pages and Web applications.
+        </p>
+    </section>  
+</div>
+<!-- /Examples -->
+<!-- Load linkIt script -->
 <script src="linkit.js"></script>
-
+<!-- Run linkIt functions -->
 <script>
-	$(function(){
-		$('.url-test').linkIt('url',{
-			color: 'green'
-		});
-		$('.text-test').linkIt('text',{
-			text: 'twitter',
-			link: 'https://twitter.com',
-			color: 'green'
-		});
-	});
+    $(function () {
+        $('.text').linkIt({
+            linkWord: ["jQuery", "https://learn.jquery.com"],
+        });
+        $('.text-2').linkIt({
+            linkWord: ["HTML", "https://learn.jquery.com"],
+        });
+        $('.text-3').linkIt({
+            linkWord: ["design", "https://learn.jquery.com"],
+        });
+    });
 </script>
 </body>
 </html>
