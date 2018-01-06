@@ -6,85 +6,137 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-    <h1>linkit.js examples</h1>
-    <p class="lead">Below are collection of examples using linkt.js </p>
-    <hr>
-    <section class="text">
-        <h2>Example 1: Basic word replace</h2>
-        <p>
-           This is the most basic usage of linkit.js.
-        </p>
-        <pre>
-        <code>
-        $('.text p').linkIt({
-            link: {
-                word: 'linkit.js',
-                url: 'https://github.com/djnetherton/link-it'
-            }
-        });</code>
-        </pre>
-        
-    </section>
-    <section class="text-2">
-        <h2>Example 2: Case-sensitive word replacement</h2>
-        <p>
-            In this example we're demonstrating how we can replace case sensitive words like HTML but leave other instances like html, untouched.
-        </p>
-        <pre>
-        <code>
-        $('.text-2 p').linkIt({
-            link: {
-                word: 'HTML',
-                url: 'https://github.com/djnetherton/link-it'
-            },
-            caseSensitive: true
-        });</code>
-        </pre>
-    </section> 
-    <section class="text-3">
-        <h2>Example 3: Using a custom colour for your links.</h2>
-        <p>
-            This example shows how you can use a custom colour for each word that's been linked.
-        </p>
-        <pre>
-        <code>
-        $('.text-3 p').linkIt({
-            link: {
-                word: 'custom colour',
-                url: 'https://github.com/djnetherton/link-it'
-            },
-            linkColor: 'goldenrod'
-        });
-        </code>
-        </pre>
-    </section>  
-</div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="dist/linkit.min.js"></script>
-<script>
-    $(function () {
-        $('.text p').linkIt({
+    <div class="container">
+        <h1>linkit.js examples</h1>
+        <p class="lead">Below are collection of examples using linkt.js </p>
+        <hr>
+        <section class="example-1">
+            <h2>Example 1: Basic word replace</h2>
+            <p>
+                This is the most basic usage of linkit.js.
+            </p>
+<pre>
+    <code>
+        $('.example-1').linkIt({
             link: {
                 word: 'linkit.js',
                 url: 'https://github.com/djnetherton/link-it'
             }
         });
-        $('.text-2 p').linkIt({
+    </code>
+</pre>
+                
+            </section>
+            <section class="example-2">
+                <h2>Example 2: Case sensitive word replacement</h2>
+                <p>
+                    In this example we're demonstrating how we can replace case sensitive words like HTML but leave other instances like html, untouched.
+                </p>
+<pre>
+    <code>
+        $('.example-2').linkIt({
             link: {
                 word: 'HTML',
                 url: 'https://github.com/djnetherton/link-it'
             },
             caseSensitive: true
         });
-        $('.text-3 p').linkIt({
+    </code>
+</pre>
+                </section> 
+                <section class="example-3">
+                    <h2>Example 3: Using a custom colour for your links.</h2>
+                    <p>
+                        This example shows how you can use a custom colour for each word that's been linked.
+                    </p>
+<pre>
+    <code>
+        $('.example-3').linkIt({
             link: {
                 word: 'custom colour',
                 url: 'https://github.com/djnetherton/link-it'
             },
             linkColor: 'goldenrod'
         });
-    });
-</script>
-</body>
-</html>
+    </code>
+</pre>
+                </section>  
+                
+                <section class="example-4">
+                    <h2>Example 4:Add a custom class your links.</h2>
+                    <p>
+                        This example shows how you can add a custom class for each word that's been linked.
+                    </p>
+<pre>
+    <code>
+        $('.example-4').linkIt({
+            link: {
+                word: 'custom class',
+                url: 'https://github.com/djnetherton/link-it'
+            },
+            linkClass: 'my-custom-class'
+        });
+    </code>
+</pre>
+                </section>  
+                
+                <section class="example-5">
+                    <h2>Example 5 :Opening links in a new window.</h2>
+                    <p>
+                        This example shows how you can ensure your links open in a new window.
+                    </p>
+<pre>
+    <code>
+        $('.example-5').linkIt({
+            link: {
+                word: 'new window',
+                url: 'https://github.com/djnetherton/link-it'
+            },
+            newWindow: true
+        });
+    </code>
+</pre>
+                </section>  
+            </div>
+            <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+            <script src="dist/linkit.min.js"></script>
+            <script>
+                $(function () {
+                    $('.example-1').linkIt({
+                        link: {
+                            word: 'linkit.js',
+                            url: 'https://github.com/djnetherton/link-it'
+                        }
+                    });
+                    $('.example-2').linkIt({
+                        link: {
+                            word: 'HTML',
+                            url: 'https://github.com/djnetherton/link-it'
+                        },
+                        caseSensitive: true
+                    });
+                    $('.example-3').linkIt({
+                        link: {
+                            word: 'custom colour',
+                            url: 'https://github.com/djnetherton/link-it'
+                        },
+                        linkColor: 'goldenrod'
+                    });
+                    $('.example-4').linkIt({
+                        link: {
+                            word: 'custom class',
+                            url: 'https://github.com/djnetherton/link-it'
+                        },
+                        linkClass: 'my-custom-class'
+                    });
+                    $('.example-5').linkIt({
+                        link: {
+                            word: 'new window',
+                            url: 'https://github.com/djnetherton/link-it'
+                        },
+                        newWindow: true
+                    });
+                });
+            </script>
+        </body>
+        </html>
