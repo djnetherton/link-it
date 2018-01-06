@@ -1,0 +1,25 @@
+{
+  "name": "linkit",
+  "version": "1.0.0",
+  "description": "A simple jQuery plugin to add links to specific words",
+  "main": "linkit.js",
+  "scripts": {
+    "watch": "babel src/linkit.js --watch -o dist/linkit.js",
+    "build": "babel src/linkit.js -o dist/linkit.js",
+    "compress": "uglifyjs dist/linkit.js -c -o dist/linkit.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/djnetherton/link-it"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-preset-env": "^1.6.1",
+    "uglify-js": "^3.3.4"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ],
+  "author": "Dan Netherton",
+  "license": "ISC"
+}

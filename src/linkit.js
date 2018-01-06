@@ -22,7 +22,6 @@ if (typeof jQuery === 'undefined'){
                 regex = new RegExp(query, flags),
                 newHtml = `<a href="${settings.linkWord[1]}" style="color:${settings.linkColor};" class="${settings.linkClass}" ${target}>${settings.linkWord[0]}</a>`,
                 result = strHtml.replace(regex, newHtml);
-                console.log(target);
                 return $(this).html(result);
             });
         };
