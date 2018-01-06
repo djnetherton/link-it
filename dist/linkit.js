@@ -7,7 +7,7 @@ if (typeof jQuery === 'undefined') {
         $.fn.linkIt = function (options) {
             var settings = $.extend({
                 linkColor: "#ff0000",
-                linkClass: 'linkit-link',
+                linkClass: '',
                 link: {
                     word: '',
                     url: '#'
@@ -16,18 +16,27 @@ if (typeof jQuery === 'undefined') {
                 caseSensitive: false
             }, options);
 
-            var $str = $(this);
+            var str = $(this);
+            var newLink = $('<a></a>');
 
-            console.log(settings.link.word);
-
-            $str.each(function (index, element) {
+            str.each(function (index, element) {
                 var strHtml = $(this).html(),
                     query = "\\b" + settings.link.word + "\\b",
                     flags = settings.caseSensitive === true ? 'g' : 'gi',
-                    target = settings.newWindow === true ? ' target="_blank"' : '',
-                    regex = new RegExp(query, flags),
-                    newHtml = '<a href="' + settings.link.url + '" style="color:' + settings.linkColor + ';" class="' + settings.linkClass + '" ' + target + '>' + settings.link.word + '</a>',
-                    result = strHtml.replace(regex, newHtml);
+                    target = settings.newWindow === true ? '_blank"' : '_self',
+                    linkClass = settings.linkClass !== '' ? settings.linkClass : '',
+                    regex = new RegExp(query, flags);
+                //newLink = `<a href="${settings.link.url}" style="color:${settings.linkColor};"${linkClass}${target}>${settings.link.word}</a>`;
+
+
+                newLink.attr('href', settings.link.url);
+                newLink.attr('target', target);
+                newLink.css('color', settings.linkColor);
+                newLink.addClass(linkClass);
+                newLink.text(settings.link.word);
+                newLink = newLink.get(0).outerHTML;
+
+                var result = strHtml.replace(regex, newLink);
                 return $(this).html(result);
             });
         };
