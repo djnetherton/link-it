@@ -5,7 +5,7 @@
   "main": "linkit.js",
   "scripts": {
     "watch": "babel src/linkit.js --watch -o dist/linkit.js",
-    "build": "babel src/linkit.js -o dist/linkit.js",
+    "build": "babel src/linkit.js -o dist/linkit.js && npm run compress",
     "compress": "uglifyjs dist/linkit.js -c -o dist/linkit.min.js"
   },
   "repository": {
