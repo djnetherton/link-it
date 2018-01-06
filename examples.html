@@ -17,8 +17,11 @@
         </p>
         <pre>
         <code>
-        $('.text').linkIt({
-            linkWord: ["linkit.js", "https://github.com/djnetherton/link-it"]
+        $('.text p').linkIt({
+            link: {
+                word: 'linkit.js',
+                url: 'https://github.com/djnetherton/link-it'
+            }
         });</code>
         </pre>
         
@@ -30,8 +33,11 @@
         </p>
         <pre>
         <code>
-        $('.text-2').linkIt({
-            linkWord: ["HTML", "https://github.com/djnetherton/link-it"],
+        $('.text-2 p').linkIt({
+            link: {
+                word: 'HTML',
+                url: 'https://github.com/djnetherton/link-it'
+            },
             caseSensitive: true
         });</code>
         </pre>
@@ -44,7 +50,10 @@
         <pre>
         <code>
         $('.text-3 p').linkIt({
-            linkWord: ["colour", "https://github.com/djnetherton/link-it"],
+            link: {
+                word: 'custom colour',
+                url: 'https://github.com/djnetherton/link-it'
+            },
             linkColor: 'goldenrod'
         });
         </code>
@@ -56,14 +65,23 @@
 <script>
     $(function () {
         $('.text p').linkIt({
-            linkWord: ["linkit.js", "https://github.com/djnetherton/link-it"]
+            link: {
+                word: 'linkit.js',
+                url: 'https://github.com/djnetherton/link-it'
+            }
         });
         $('.text-2 p').linkIt({
-            linkWord: ["HTML", "https://github.com/djnetherton/link-it"],
+            link: {
+                word: 'HTML',
+                url: 'https://github.com/djnetherton/link-it'
+            },
             caseSensitive: true
         });
         $('.text-3 p').linkIt({
-            linkWord: ["custom colour", "https://github.com/djnetherton/link-it"],
+            link: {
+                word: 'custom colour',
+                url: 'https://github.com/djnetherton/link-it'
+            },
             linkColor: 'goldenrod'
         });
     });
