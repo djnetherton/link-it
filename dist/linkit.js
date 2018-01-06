@@ -26,8 +26,6 @@ if (typeof jQuery === 'undefined') {
                     target = settings.newWindow === true ? '_blank"' : '_self',
                     linkClass = settings.linkClass !== '' ? settings.linkClass : '',
                     regex = new RegExp(query, flags);
-                //newLink = `<a href="${settings.link.url}" style="color:${settings.linkColor};"${linkClass}${target}>${settings.link.word}</a>`;
-
 
                 newLink.attr('href', settings.link.url);
                 newLink.attr('target', target);
