@@ -11,6 +11,7 @@ if (typeof jQuery === 'undefined'){
                     word :'',
                     url: '#'
                 },
+                linkTitle: '',
                 newWindow: false,
                 caseSensitive: false
             }, options);
@@ -24,6 +25,7 @@ if (typeof jQuery === 'undefined'){
                 flags = settings.caseSensitive === true ? 'g' : 'gi',
                 target = settings.newWindow === true ? '_blank"' : '_self',
                 linkClass = settings.linkClass !== '' ? settings.linkClass : '',
+                title = settings.linkTitle !== '' ? newLink.attr('title', settings.linkTitle) : '',
                 regex = new RegExp(query, flags);
 
                 newLink.attr('href',settings.link.url);
@@ -32,7 +34,7 @@ if (typeof jQuery === 'undefined'){
                 newLink.addClass(linkClass);
                 newLink.text(settings.link.word);
                 newLink = newLink.get(0).outerHTML;
-                
+
                 let result = strHtml.replace(regex, newLink);
                 return $(this).html(result);
             });
